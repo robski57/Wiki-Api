@@ -1,5 +1,5 @@
 import wikipedia
-
+import sqlite3
 user = input("Please enter a selection: ")
 
 
@@ -10,6 +10,10 @@ print (wikipedia.search(user))
 mn = (wikipedia.page(user))
 print (wikipedia.page(user))
 
+conn = sqlite3.connect("wiki_database.db")
+curs = conn.cursor()
+curs.execute('CREATE TABLE IF NOT EXISTS wikiTable (Title TEXT PRIMARY KEY, Url TEXT, Link TEXT )');
+curs.execute("INSERT INTO wikiTable (Title) VALUES('Title')");
 
 mn.title
 print ("Title: " + mn.title)
