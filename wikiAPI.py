@@ -21,8 +21,9 @@ print ("Title: " + mn.title)
 mn.url
 print("URL: " + mn.url)
 
-#mn.content
-#print(mn.content)
+mn.content
+print(mn.content)
+
 mn.images
 print(mn.images)
 
